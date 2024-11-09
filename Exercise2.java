@@ -2,7 +2,9 @@ import java.util.Scanner;
 public class Exercise2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
+        
+        // Użytkownik wprowadza tu dane
+        
         System.out.println("Insert price of product between 100-10k:");
         int price = input.nextInt();
 
@@ -10,6 +12,8 @@ public class Exercise2 {
         int installment = input.nextInt();
         input.close();
 
+        //Sprawdzamy czy dane są poprawne i wyznaczamy mnożnik na podstawie liczby rat
+        
         double multiplier;
         if (price < 100 || price > 10_000 || installment < 6 || installment > 48) {
             System.out.println("You inserted a wrong data: Price should be between 100 and 10_000");
@@ -23,6 +27,8 @@ public class Exercise2 {
                 multiplier = 0.1;
             }
 
+        // Obliczanie wyników: odsetek, ceny i wartości raty
+            
             double interest = price * multiplier;
             double total_price = price + interest;
             double installment_value = total_price / installment;
